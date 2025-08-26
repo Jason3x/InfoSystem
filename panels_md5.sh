@@ -23,7 +23,6 @@ declare -A dtb_md5=(
   ["9f41df45acac67bff88ec52306efc225"]="Panel 3 (v4)"
   ["72856dd54e77a0fd61d9c2a59b08b685"]="Panel 3 (v4)"
   ["040b5bfff8c1969aaeedcfbe8a33ad06"]="Panel 3 (v4)"
-  ["f6984db1b07f03a90c182c59dd51ccf0"]="Panel 3 (v4)"
 
   ["7b76c4e4333887fd0ccc0afddd2f41ce"]="Panel 4"
   ["4863e7544738df62eaae4a1bec031fd9"]="Panel 4"
