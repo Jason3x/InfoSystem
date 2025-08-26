@@ -10,34 +10,6 @@ fi
 
 CURR_TTY="/dev/tty1"
 APP_NAME="R36S System Info by Jason"
-SCRIPT_PATH="$(realpath "$0")"
-SCRIPT_NAME="$(basename "$0")"
-TMP_SCRIPT="/tmp/${SCRIPT_NAME}"
-
-# --- Vérification de mise à jour Git ---
-UpdateScript() {
-    GIT_URL="https://raw.githubusercontent.com/Jason3x/InfoSystem/main/InfoSystem.sh"
-
-    if curl -fsSL -o "$TMP_SCRIPT" "$GIT_URL"; then
-        LOCAL_MD5=$(md5sum "$SCRIPT_PATH" | awk '{print $1}')
-        REMOTE_MD5=$(md5sum "$TMP_SCRIPT" | awk '{print $1}')
-
-        if [ "$LOCAL_MD5" != "$REMOTE_MD5" ]; then
-            echo ">> Nouvelle version détectée, mise à jour en cours..."
-            cp "$TMP_SCRIPT" "$SCRIPT_PATH"
-            chmod +x "$SCRIPT_PATH"
-            exec "$SCRIPT_PATH" "$@"   # relance le nouveau script
-            exit 0
-        else
-            rm "$TMP_SCRIPT"
-        fi
-    else
-        echo ">> Pas de connexion internet, on continue avec la version locale."
-    fi
-}
-
-# Lance la vérification de mise à jour AVANT le reste
-UpdateScript "$@"
 
 printf "\033c" > "$CURR_TTY"
 printf "\e[?25l" > "$CURR_TTY" # Hide cursor
@@ -57,7 +29,6 @@ printf "\033c" > "$CURR_TTY"
 printf "Starting Info System\nPlease wait..." > "$CURR_TTY"
 sleep 1
 
-
 ExitMenu() {
     printf "\033c" > "$CURR_TTY"
     printf "\e[?25h" > "$CURR_TTY" # Show cursor
@@ -72,6 +43,13 @@ ExitMenu() {
 # --- Détection du panel ---
 DetectPanel() {
      # Vérification si un paramètre panel= existe
+    local PANEL_PARAM
+    PANEL_PARAM=$(sed -n 's/.*panel=\([^ ]*\).*/\1/p' /proc/cmdline 2>/dev/null)
+    if [ -n "$PANEL_PARAM" ]; then
+        [[ "$PANEL_PARAM" = "unset" ]] && echo "Panel 4" && return
+        echo "Panel $PANEL_PARAM"
+        return
+    fi
     
     DTB_FILES=$(ls /boot/*.dtb 2>/dev/null)
 
@@ -101,7 +79,7 @@ DetectPanel() {
     ["5871fde00d2ed1e5866665e38ee3cfab"]="Panel 4"
     ["b92e8d791dec428b65ad52ccc5a17af4"]="Panel 4"
     ["8faf0a3873008548c55dfff574b2a3f9"]="Panel 4"
-
+    ["42a3021377abadd36375e62a7d5a2e40"]="Panel 4"
     ["c4547ce22eca3c318546f3cbf5f3d878"]="Panel 4"
     ["5f4dcc3b5aa765d61d8327deb882cf99"]="Panel 4"
     ["861278f7ab7ade97ac1515aedbbdeff0"]="Panel 5"
