@@ -1,7 +1,7 @@
 # panels_md5.sh
 # Base de données des hash DTB → Nom de panel
 
-declare -A dtb_md5=(
+declare -Ag dtb_md5=(
   ["bfc6068ef7d80575bef04b36ef881619"]="Panel 0"
   ["d41d8cd98f00b204e9800998ecf8427e"]="Panel 0"
 
