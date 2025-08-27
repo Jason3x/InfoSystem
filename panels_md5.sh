@@ -12,13 +12,12 @@ declare -Ag dtb_md5=(
   ["2d82650c523ac734a16bddf600286d6d"]="Panel 2"
   ["daf777a6b5ed355c3aaf546da4e42da9"]="Panel 2"
 
-  ["b3bf18765a4453b8eaeaf60362b79b3d"]="Panel 3 (v3)"
-  ["f6984db1b07f03a90c182c59dd51ccf0"]="Panel 3 (v3)"
-
-  ["543038f0cc9b515401186ebbde232cfa"]="Panel 3 (v4)"
-  ["9f41df45acac67bff88ec52306efc225"]="Panel 3 (v4)"
-  ["72856dd54e77a0fd61d9c2a59b08b685"]="Panel 3 (v4)"
-  ["040b5bfff8c1969aaeedcfbe8a33ad06"]="Panel 3 (v4)"
+  ["b3bf18765a4453b8eaeaf60362b79b3d"]="Panel 3"
+  ["f6984db1b07f03a90c182c59dd51ccf0"]="Panel 3"
+  ["543038f0cc9b515401186ebbde232cfa"]="Panel 3"
+  ["9f41df45acac67bff88ec52306efc225"]="Panel 3"
+  ["72856dd54e77a0fd61d9c2a59b08b685"]="Panel 3"
+  ["040b5bfff8c1969aaeedcfbe8a33ad06"]="Panel 3"
 
   ["7b76c4e4333887fd0ccc0afddd2f41ce"]="Panel 4"
   ["4863e7544738df62eaae4a1bec031fd9"]="Panel 4"
