@@ -30,7 +30,6 @@ declare -Ag dtb_md5=(
   ["b92e8d791dec428b65ad52ccc5a17af4"]="Panel 4"
   ["8faf0a3873008548c55dfff574b2a3f9"]="Panel 4"
   ["c4547ce22eca3c318546f3cbf5f3d878"]="Panel 4"
-  ["42a3021377abadd36375e62a7d5a2e40"]="Panel 4"
   ["5f4dcc3b5aa765d61d8327deb882cf99"]="Panel 4"
 
   ["861278f7ab7ade97ac1515aedbbdeff0"]="Panel 5"
