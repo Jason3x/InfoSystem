@@ -155,40 +155,39 @@ DetectPanel() {
     return 1
 }
 
+# --- SD Info ---
 GetSDInfo() {
-    local LABEL=$1 MOUNTPOINT=$2
-    local DEV=$(lsblk -no pkname "$(findmnt -n -o SOURCE "$MOUNTPOINT" 2>/dev/null)" 2>/dev/null | head -n1)
+    local LABEL=$1
+    local MOUNTPOINT=$2
 
+    local DEV=$(lsblk -no pkname $(findmnt -n -o SOURCE "$MOUNTPOINT") 2>/dev/null | head -n1)
     if [ -z "$DEV" ]; then
-        echo "  • Not inserted"
+        echo "Not inserted"
         return
     fi
 
     local TOTAL=$(lsblk -b -dn -o SIZE "/dev/$DEV" | awk '{s+=$1} END {print s}')
     local TOTAL_GB=$(awk "BEGIN {printf \"%.2f\", $TOTAL/1024/1024/1024}")
 
-    local USED=0 AVAIL=0
-    # Obtenir la liste des partitions pour le périphérique principal
-    local PARTITIONS=$(lsblk -ln -o NAME "/dev/$DEV" | grep -v "$DEV$")
-
-    for part in $PARTITIONS; do
-        local MP=$(findmnt -n -o TARGET "/dev/$part" 2>/dev/null)
-        if [ -n "$MP" ] && [ "$MP" != "/boot" ]; then 
-            local USED_PART=$(df -B1 --output=used "$MP" | tail -1)
-            local AVAIL_PART=$(df -B1 --output=avail "$MP" | tail -1)
+    local USED=0
+    local AVAIL=0
+    for part in $(lsblk -ln -o NAME "/dev/$DEV"); do
+        local MP=$(lsblk -ln -o MOUNTPOINT "/dev/$part")
+        [[ "$MP" == "/boot" ]] && continue
+        if [ -n "$MP" ]; then
+            USED_PART=$(df -B1 --output=used "$MP" | tail -1)
+            AVAIL_PART=$(df -B1 --output=avail "$MP" | tail -1)
             USED=$((USED + USED_PART))
             AVAIL=$((AVAIL + AVAIL_PART))
         fi
     done
-
     local USED_GB=$(awk "BEGIN {printf \"%.2f\", $USED/1024/1024/1024}")
     local AVAIL_GB=$(awk "BEGIN {printf \"%.2f\", $AVAIL/1024/1024/1024}")
 
     echo "  • Total SD size : ${TOTAL_GB} GB"
-    echo "  • Used           : ${USED_GB} GB"
-    echo "  • Available      : ${AVAIL_GB} GB"
+    echo "  • Used : ${USED_GB} GB"
+    echo "  • Available : ${AVAIL_GB} GB"
 }
-
 
 ShowInfos() {
     setfont /usr/share/consolefonts/Lat7-Terminus16.psf.gz
