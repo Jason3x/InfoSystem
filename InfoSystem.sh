@@ -162,7 +162,7 @@ GetSDInfo() {
 
     local DEV=$(lsblk -no pkname $(findmnt -n -o SOURCE "$MOUNTPOINT") 2>/dev/null | head -n1)
     if [ -z "$DEV" ]; then
-        echo "Not inserted"
+        echo "  • Not inserted"
         return
     fi
 
