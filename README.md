@@ -8,11 +8,5 @@ This script is used to :
 # Installation 
 Install only InfoSystem.sh in roms/tools or roms2/tools if 2 sd cards
 
-# Original microSD (factory configuration)
-- Copy the script to roms/tools
-- In EmulationStation, open Options → 351Files, go to roms/tools and copy the script to opt/system.
-
-Otherwise, it will not appear in the Tools menu on the original microSD. (Thanks Tyranight for this) 
-
 # Update
 Update panels if new ones are added => internet connection required
