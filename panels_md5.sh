@@ -33,7 +33,6 @@ declare -Ag dtb_md5=(
   
   ["f4e351095d367b641054413e1c3c7a62"]="Clone K36 Panel 1 (2TF)"
   ["3173d0f7326d03b021c729ed2d8ae5a1"]="Clone K36 Panel 1 (v2)"
-  ["f4e351095d367b641054413e1c3c7a62"]="Clone K36 Panel 1"
   ["71d96e48f8d6f1ae3e184c34023747b3"]="Clone K36 Panel 4"
   ["320555247f7e911cb5c8e1ef7899776e"]="Clone K36S"
   ["9782673a1f17f559a62ee210d4bbf206"]="Clone K36S"
@@ -88,4 +87,6 @@ declare -Ag dtb_md5=(
   ["2be6f8864414af729c0666089ac3af88"]="Clone R36S Panel 9"
 
   ["037dfec5cb0bf9938864489fac9d9e3c"]="Clone R36S Panel 10"
+
+  ["5a0c1d40d13d2c785e05b90161a004d0"]="Clone R36S Soy Sauce"
 )
