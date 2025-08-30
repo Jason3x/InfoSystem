@@ -89,4 +89,6 @@ declare -Ag dtb_md5=(
   ["037dfec5cb0bf9938864489fac9d9e3c"]="Clone R36S Panel 10"
 
   ["5a0c1d40d13d2c785e05b90161a004d0"]="Clone R36S Soy Sauce"
+  ["0276a922c6206a81a67945b53c042c66"]="Clone R36S Soy Sauce"
+  
 )
