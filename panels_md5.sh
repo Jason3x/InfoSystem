@@ -26,6 +26,7 @@ declare -Ag dtb_md5=(
   ["8faf0a3873008548c55dfff574b2a3f9"]="R36S Original Panel 4"
   ["c4547ce22eca3c318546f3cbf5f3d878"]="R36S Original Panel 4"
   ["42a3021377abadd36375e62a7d5a2e40"]="R36S Original Panel 4"
+  ["5c4793e33d3fac217bb5b5e90fd6a45f"]="R36S Original Panel 4"
 
   ["861278f7ab7ade97ac1515aedbbdeff0"]="R36S Original Panel 5"
 
