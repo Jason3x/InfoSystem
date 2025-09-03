@@ -44,6 +44,8 @@ declare -Ag dtb_md5=(
   
   ["6de588c4eda969c2487402a4823ca60a"]="Clone R36 Pro"
   ["2748ec226bcd9c06095bb94c4637493a"]="Clone R36 Pro"
+
+  ["ff983f16c0dbc18ab97116cc3677f559"]="Clone R36 Plus"
   
   ["f8f7f0cdc410543bfa6a43b7e369ff11"]="Clone R36 Ultra"
   ["5cb5429b5418aa71b730501786578d04"]="Clone R36 Ultra"
