@@ -10,3 +10,5 @@ Install only InfoSystem.sh in roms/tools or roms2/tools if 2 sd cards
 
 # Update
 Update panels if new ones are added => internet connection required
+
+https://ko-fi.com/jason3x
