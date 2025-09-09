@@ -76,6 +76,7 @@ UpdatePanelsDB() {
   ["8faf0a3873008548c55dfff574b2a3f9"]="R36S Original Panel 4"
   ["c4547ce22eca3c318546f3cbf5f3d878"]="R36S Original Panel 4"
   ["42a3021377abadd36375e62a7d5a2e40"]="R36S Original Panel 4"
+  ["5c4793e33d3fac217bb5b5e90fd6a45f"]="R36S Original Panel 4"
 
   ["861278f7ab7ade97ac1515aedbbdeff0"]="R36S Original Panel 5"
 
@@ -93,6 +94,8 @@ UpdatePanelsDB() {
   
   ["6de588c4eda969c2487402a4823ca60a"]="Clone R36 Pro"
   ["2748ec226bcd9c06095bb94c4637493a"]="Clone R36 Pro"
+
+  ["ff983f16c0dbc18ab97116cc3677f559"]="Clone R36 Plus"
   
   ["f8f7f0cdc410543bfa6a43b7e369ff11"]="Clone R36 Ultra"
   ["5cb5429b5418aa71b730501786578d04"]="Clone R36 Ultra"
