@@ -86,6 +86,8 @@ declare -Ag dtb_md5=(
   ["01de1c13af2882c697e013224f40bc5b"]="Clone R36S Panel 7"
 
   ["2cc8f4054fe0b5db5aac45d36c46779c"]="Clone R36S Panel 8"
+  ["786e294c8929e227ed60d0d9c5859b6d"]="Clone R36S Panel 8"
+  ["86aa365c57fb4f8edaaca3deb3ff005b"]="Clone R36S Panel 8 ou 9"
 
   ["2be6f8864414af729c0666089ac3af88"]="Clone R36S Panel 9"
 
