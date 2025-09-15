@@ -41,7 +41,7 @@ declare -Ag dtb_md5=(
   ["6de588c4eda969c2487402a4823ca60a"]="Clone R36 Pro"
   ["2748ec226bcd9c06095bb94c4637493a"]="Clone R36 Pro"
 
-  ["ff983f16c0dbc18ab97116cc3677f559"]="Clone R36 Plus"
+  ["ff983f16c0dbc18ab97116cc3677f559"]="R36 Plus"
   
   ["f8f7f0cdc410543bfa6a43b7e369ff11"]="Clone R36 Ultra"
   ["5cb5429b5418aa71b730501786578d04"]="Clone R36 Ultra"
@@ -50,9 +50,9 @@ declare -Ag dtb_md5=(
   
   ["ccc295fcb58c947bbc3026d153eae978"]="Clone R36T"
   
-  ["fae7b5ce300a4ce5122d09d292dbf1eb"]="Clone RX6H"
-  ["ec92c33f55913a9681f1abc4210b8926"]="Clone RX6H Panel 1"
-  ["0b11a2bf3a862dbb0e16ae6cd8b8b228"]="Clone RX6H Panel 2"
+  ["fae7b5ce300a4ce5122d09d292dbf1eb"]="RX6H"
+  ["ec92c33f55913a9681f1abc4210b8926"]="RX6H Panel 1"
+  ["0b11a2bf3a862dbb0e16ae6cd8b8b228"]="RX6H Panel 2"
   
   ["85b04dcfef99b097ce5de45c39a94778"]="Clone RX6S"
   ["a4c3d2881898f1c3ab976d8d049a4dfa"]="Clone RX6S"
