@@ -1,4 +1,17 @@
-# InfoSystem
+This is a new version of InfoSystem with @lcdyk0517 collaboration. Thank's to him
+
+
+# InfoSystem v2.0 
+
+- All the panel information for both arkos4clone and r3xs. 
+
+- New way to detect the panel by panel-init-sequence and reset-gpios in the panels. 
+
+- Added display refresh rate information.
+
+- Adjusted the version number retrieval. 
+
+# InfoSystem v1.0
 This script is used to :
 - Know the panel of your console,
 - The total, used and free memory,
