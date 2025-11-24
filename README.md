@@ -1,7 +1,5 @@
-This is a new version of InfoSystem with @lcdyk0517 collaboration. Thank's to him
-
-
 # InfoSystem v2.0 
+This is a new version of InfoSystem with @lcdyk0517 collaboration. Thank's to him
 
 - All the panel information for both arkos4clone and r3xs. 
 
