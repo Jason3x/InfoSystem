@@ -198,11 +198,25 @@ get_reset_gpio_string() {
 # ========= DetectPanel：panel-init + reset-gpio + 刷新率 =========
 DetectPanel() {
     local DTS_FILE
-    DTS_FILE=$(get_running_dts) || { echo "Unknown panel"; echo "Unknown"; return 1; }
+    DTS_FILE=$(get_running_dts 2>/dev/null || true)
 
     local PANEL_LINE PANEL_RAW PANEL_SEQ
     local PANEL_NAME="Unknown panel"
+    # --- fallback：从 fb0/modes 取刷新率（即使检测不到面板也能显示） ---
+    local FB_MODE FB_HZ
+    FB_MODE=$(head -n1 /sys/class/graphics/fb0/modes 2>/dev/null || true)
+    FB_HZ=$(echo "$FB_MODE" | sed -nE 's/.*-([0-9]+(\.[0-9]+)?).*/\1/p')
 
+    # 如果 DTS 根本拿不到：面板 Unknown，但刷新率尽量给出来
+    if [ -z "$DTS_FILE" ] || [ ! -f "$DTS_FILE" ]; then
+        echo "Unknown panel"
+        if [ -n "$FB_HZ" ]; then
+            echo "$FB_HZ"
+        else
+            echo "Unknown"
+        fi
+        return 0
+    fi
     # --- 1) 抽 panel-init-sequence ---
     PANEL_LINE=$(grep -n "panel-init-sequence" "$DTS_FILE" | head -n1 | cut -d: -f1 || true)
     if [ -n "$PANEL_LINE" ]; then
@@ -346,6 +360,15 @@ DetectPanel() {
                     fi
                 fi
             fi
+        fi
+    fi
+
+    # --- 4b) 如果 DTS 没算出来刷新率，fallback 到 fb0/modes ---
+    if [ "$PANEL_RATE" = "Unknown" ] || [ -z "$PANEL_RATE" ]; then
+        if [ -n "$FB_HZ" ]; then
+            PANEL_RATE="$FB_HZ"
+        else
+            PANEL_RATE="Unknown"
         fi
     fi
 
